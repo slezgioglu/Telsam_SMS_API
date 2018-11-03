@@ -6,24 +6,33 @@ Bu api için gerekli olan Token (API token anahtarınızı) ve Keycode (API Anah
 Api Methodları
 •	Sms Gönderimi (Tek mesajı bir veya daha fazla alıcıya gönderim)
 Sms mesajını, aynı anda bir veya daha fazla kullanıcıya bu methodu kullanarak gönderim yapabilirsiniz.
+
 •	İletim Raporları
 Göndermiş olduğunuz sms mesajının id si ile sms durumunun raporlarını bu method ile alabilirsiniz.
+
 •	Çoklu Sms gönderimi
 Tek seferde birden fazla birbirinden farklı ve bağımsız Sms mesajını ve her mesajda birden fazla alıcıya gönderimi bu method ile yapabilirsiniz.
+
 •	Çoklu SMS Gönderimi için İletim Raporları
 Çoklu Sms gönderimlerinin raporlarını bu method ile alabilirsiniz.
 •	Gruba Sms gönderimi
+
 Hesabınızda kayıtlı olan gruptaki tüm kişilere mesaj gönderimini bu method ile yapabilirsiniz.
 •	Kullanıcı Bilgisi
+
 Hesabınıza ait tüm bilgileri bu method ile alabilirsiniz.
+
 •	Başlık Originator Talebinde Bulunma
 Bu method aracılığı ile kullanmak istediğiniz başlığı sisteme ekleyebilirsiniz. Onaylanma işleminden sonra kullanıma başlayabilirsiniz.
+
 •	Rehberde Yeni Bir Grup Oluşturma
 Bu method aracılığı ile rehberinize yeni bir grup ekleyebilirsiniz.
+
 •	Rehberdeki bir Gruba Yeni Kişi Veya Kişiler Ekleme
 Rehberinizde bulunan bir gruba yeni kişi veya kişileri bu method aracılığı ile ekleyebilirsiniz.
 
 SMS Gönderimi (Tek mesajı bir veya daha fazla alıcıya gönderim)
+
 Açıklama
 Sms gönderimi; HTTP POST methodu kullanılarak gönderim yapılabilir. Parametre açıklamaları ve gönderim şekli aşağıda açıklanmıştır.
 API Web Adresi
@@ -49,19 +58,33 @@ XML Yapısı
 </SMS>
 
 token: API token anahtarınız
+
 keycode: API anahtar kodunuz
+
 originator: SMS Başlığı
-text: SMS mesajı. Maksimum limit 1080 karakter olabilir. 
+
+text: SMS mesajı. Maksimum limit 1080 karakter olabilir.
+
 unicode: Unicode (örn:Türkçe karakter) mesaj gönderimi için değer 1 olmalıdır. Aksi halde boş bırakılmalıdır.
+
 international: Uluslar arası sms gönderimi için bu değer 1 olmalıdır. Aksi halde boş bırakılmalıdır.
+
 canceltext: Mesajın sonuna iptal bilgisi eklemek için bu değer 1 olmalıdır. Aksi halde boş bırakılmalıdır.
+
 receivers: Alıcı GMS numaralarının tutulduğu parametre
+
 receiver: Alıcı GMS numarası. GSM numarası 0 ile başlamamalıdır.
+
 receiver->id: Eğer kendi receiver id değerinizi kullanırsanız, receiver id parametresini kullanabilirsiniz. Kullanmaz iseniz sistem kendi id leri ile döndürür.
+
 XML İstek Örneği
+
 POST http://websms.telsam.com.tr/xmlapiV4/sendsms
+
 Host: websms.telsam.com.tr
+
 Content-Type: application/xml
+
 Accept: */*
 
 <?xml version="1.0"?>
